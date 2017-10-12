@@ -75,7 +75,11 @@ class HomeController extends Controller
 
             $store->domain = str_after(parse_url(str_start($domain, 'http://'),  PHP_URL_HOST), 'www.');
             $store->register_url = '';
-            $store->save();
+            try {
+                $store->save();
+            } catch (\Exception $e) {
+
+            }
         }
 
         return redirect('/')->withSuccess('添加成功');
