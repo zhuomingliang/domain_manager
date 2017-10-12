@@ -115,7 +115,6 @@
                             table.column(0).nodes().each(function (cell, i) {
                                 cell.innerHTML = i + 1;
                             });
-                            loadFadeOut();
                         });
 
                         $("table").delegate('.delBtn', 'click', function () {
