@@ -94,7 +94,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->call(function (){
             $domains = Domain::select(['id', 'domain'])
-                ->Where('expire_time', '<', Carbon::today()->addDays(30)->format('Y-m-d 00:00:00'))
+                ->Where('expire_time', '<', Carbon::today()->addDays(60)->format('Y-m-d 00:00:00'))
                 ->Where('updated_at', '<', Carbon::yesterday()->format('Y-m-d 00:00:00'))
                 ->get();
 
