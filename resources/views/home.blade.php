@@ -107,10 +107,6 @@
                             ]
                         });
 
-                        table.on('preXhr.dt', function () {
-                            loadShow();
-                        });
-
                         table.on('draw.dt', function () {
                             table.column(0).nodes().each(function (cell, i) {
                                 cell.innerHTML = i + 1;
