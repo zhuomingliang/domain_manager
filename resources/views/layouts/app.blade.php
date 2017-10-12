@@ -74,7 +74,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="/js/app.js"></script>
     <script src="/assets/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="/assets/plugins/datatables/dataTables.bootstrap.js"></script>
     @yield('js')
