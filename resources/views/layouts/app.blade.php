@@ -28,7 +28,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="/">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
@@ -58,7 +58,7 @@
                                             退出登录
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" action="/logout" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
