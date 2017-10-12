@@ -91,6 +91,21 @@
                             ],
                             columnDefs: [
                                 {
+                                    'targets': 3,
+                                    'render': function (data, type, row) {
+                                    	var diff = new Date(new Date(data) - new Date(new Date().getTime()+(60*24*60*60*1000)));
+
+                                    	// get days
+                                    	var days = diff/1000/60/60/24;
+
+                                    	if (days > 60) {
+                                            return app.getLabelHtml(data, 'label-success');
+                                    	} else {
+                                            return app.getLabelHtml(data, 'label-danger');
+                                    	}
+                                    }
+                                },
+                                {
                                     'targets': -1, "render": function (data, type, row) {
                                     var str = '';
 
