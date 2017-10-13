@@ -47,7 +47,7 @@ class HomeController extends Controller
                     $query->where('domain', 'LIKE', '%' . $search['value'] . '%');
                 })->count();
                 $data['data']= $query->where(function ($query) use ($search) {
-                    $query->where('usernick', 'LIKE', '%' . $search['value'] . '%');
+                    $query->where('domain', 'LIKE', '%' . $search['value'] . '%');
                 })->get();
             } else {
                 $data['recordsFiltered'] = $data['recordsTotal'];
@@ -83,5 +83,22 @@ class HomeController extends Controller
         }
 
         return redirect('/')->withSuccess('添加成功');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteIndex(Request $request)
+    {
+        $domain = Domain::find((int)$request->get('id', 0));
+
+        if ($domain) {
+            $domain->delete();
+        }
+
+        return redirect('/')->withSuccess('删除成功');
     }
 }

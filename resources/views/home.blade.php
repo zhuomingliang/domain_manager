@@ -109,11 +109,11 @@
                                     'targets': -1, "render": function (data, type, row) {
                                     var str = '';
 
-                                    //编辑
-                                    str += '<a style="margin:3px;" href="/edit?id=' + row['id'] + '" class="X-Small btn-xs text-success "><i class="fa fa-edit"></i> 编辑</a>';
+                                    // 编辑
+                                    // str += '<a style="margin:3px;" href="/edit?id=' + row['id'] + '" class="X-Small btn-xs text-success "><i class="fa fa-edit"></i> 编辑</a>';
 
 
-                                    //删除
+                                    // 删除
                                     str += '<a style="margin:3px;" href="#" attr="' + row['id'] + '" class="delBtn X-Small btn-xs text-danger"><i class="fa fa-times-circle"></i> 删除</a>';
 
                                     return str;
@@ -130,7 +130,7 @@
 
                         $("table").delegate('.delBtn', 'click', function () {
                             var id = $(this).attr('attr');
-                            $('.deleteForm').attr('action', '/admin/?id=' + id);
+                            $('.deleteForm').attr('action', '/?id=' + id);
                             $("#modal-delete").modal();
                         });
 
