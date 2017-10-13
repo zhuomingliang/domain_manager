@@ -27,8 +27,8 @@ class CreateUsersTable extends Migration
     private function data()
     {
         DB::table('users')->insert([
-                'name' => 'rock',
-                'password' =>  bcrypt('rock123'),
+                'name' => 'jimmy',
+                'password' =>  bcrypt('demo'),
                 'remember_token' => str_random(10),
         ]);
     }
