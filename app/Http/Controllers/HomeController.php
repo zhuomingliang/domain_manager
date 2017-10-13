@@ -44,10 +44,12 @@ class HomeController extends Controller
 
             if (strlen($search['value']) > 0) {
                 $data['recordsFiltered'] = Domain::where(function ($query) use ($search) {
-                    $query->where('domain', 'LIKE', '%' . $search['value'] . '%');
+                    $query->where('domain', 'LIKE', '%' . $search['value'] . '%')
+                        ->orWhere('register_url', 'LIKE', '%' . $search['value'] . '%');
                 })->count();
                 $data['data']= $query->where(function ($query) use ($search) {
-                    $query->where('domain', 'LIKE', '%' . $search['value'] . '%');
+                    $query->where('domain', 'LIKE', '%' . $search['value'] . '%')
+                        ->orWhere('register_url', 'LIKE', '%' . $search['value'] . '%');
                 })->get();
             } else {
                 $data['recordsFiltered'] = $data['recordsTotal'];
