@@ -103,4 +103,26 @@ class HomeController extends Controller
 
         return redirect('/')->withSuccess('删除成功');
     }
+
+    public function export() {
+        $domains = Domain::select([
+                'domain'
+        ])->cursor();
+
+        $outputs = [];
+        foreach ($domains as $domain) {
+            $outputs[] = $domain->domain;
+        }
+
+        $output = join("\r\n", $outputs);
+        header('Content-Description: File Transfer');
+        header('Content-Disposition: attachment; filename="domains.txt"');
+        header('Content-Type: text/plain');
+        header('Expires: 0');
+        header('Cache-Control: no-cache, must-revalidate');
+        header('Pragma: public');
+        header('Content-Length: ' . strlen($output));
+
+        echo $output;
+    }
 }

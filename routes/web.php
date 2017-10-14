@@ -19,3 +19,5 @@ Route::delete('/', 'HomeController@deleteIndex')->name('delete_home');
 
 Route::get('/create', 'HomeController@create')->name('create');
 Route::post('/create', 'HomeController@postCreate')->name('post_create');
+
+Route::get('/export', 'HomeController@export')->name('create');

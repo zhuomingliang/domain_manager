@@ -8,6 +8,9 @@
                 <a href="/create" class="btn btn-primary btn-md">
                     <i class="fa fa-plus-circle"></i> 添加域名列表
                 </a>
+                <a href="/export" class="btn btn-info btn-md">
+                    <i class="fa fa-file-excel-o"></i> 导出域名列表
+                </a>
         </div>
     </div>
     <div class="row page-title-row" style="margin:5px;">
