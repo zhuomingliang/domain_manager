@@ -71,7 +71,7 @@ class HomeController extends Controller
         $domains = str_replace("\r", '', $domains);
 
         foreach(explode("\n", $domains) as $domain) {
-            $domain = parse_url(str_start($domain, 'http://'),  PHP_URL_HOST);;
+            $domain = parse_url(str_start($domain, 'http://'),  PHP_URL_HOST);
 
             $store = new Domain;
 
